@@ -1,0 +1,619 @@
+/*
+	Template Name: SAIT
+	Author: Keegan! Techentin
+	Author URI : http://www.ktechentin.com/
+    Version: 1.0
+    Description: HTML5 Responsive SAIT Template.
+	Tag: HTML5, CSS3, jQuery, Responsive Template.
+*/
+
+
+
+/* Table of Contents
+==================================================
+# Global 
+# Tr Topbar No Menu
+# Tr Team
+# Tr Form
+# tr-footer
+==================================================
+
+*/
+
+/* ==========================================================================
+ 	Global
+ ========================================================================== */
+
+html,
+body {
+	font-size: 16px;
+	font-family:"Titillium Web", sans-serif;
+	font-weight:400;
+	overflow-x: hidden;
+	background-color: #fafafa;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:"Titillium Web", sans-serif;
+	font-weight:400;
+}
+
+.tr-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a, 
+a:hover,
+a:focus,
+input:focus {
+	text-decoration:none;
+	outline: none;
+}
+
+a:hover {
+	color: #ed1c24;
+}
+
+a:active,
+a:focus, button, button:focus, .btn:focus,
+input:focus, textarea:focus, select:focus, 
+.form-control, .form-control:focus,
+.btn.active.focus, .btn.active:focus, 
+.btn.focus, .btn:active.focus, 
+.btn:active:focus, .btn:focus {
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+}
+
+.btn-primary {
+	font-size: 14px;
+	color: #fff;
+	font-weight: 700;
+	padding: 10px 30px 13px;
+	border-radius: 60px;
+	text-transform: uppercase;
+	background-color: #DA291C;
+	border-color: #DA291C;
+	border:1px solid #DA291C;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active.focus, 
+.btn-primary:active:focus, 
+.btn-primary:active:hover {
+	color: #ed1c24;
+	border-color: #ed1c24;
+	background-color: #fff;
+}
+
+.color-red {
+	color: #DA291C;
+}
+
+.tr-bg-white {
+	background-color: #fff;
+}
+
+.bg-color-red,
+.hover-bg-color-red:hover {
+	color: #fff;
+	background-color: #DA291C;
+}
+
+.section-before-rgba-red {
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+
+.section-before-rgba-red:before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: rgba(237, 28, 36, 0.8);
+}
+
+.overlay-rgba-red {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(237, 28, 36, 0.9);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.tr-section,
+.parallax-content {
+	padding: 120px 0;
+}
+
+.title-section {
+	color: #8f8f8f;
+	font-weight: 300;
+	max-width: 595px;
+	display: inline-block;
+	margin-bottom: 50px;
+}
+
+.title-section-bg {
+	color: #f0f0f0;
+	font-size: 200px;
+	line-height: 0;
+	position: absolute;
+	top: 35px;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+	opacity: 0.8;
+	font-weight: 700;
+}
+
+.title-section h1 {
+	margin-top: 0;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.title-section a {
+	color: #DA291C;
+}
+
+.bg-image {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.form-control {
+	height: 50px;
+	color: #989898;
+	padding: 0 30px;
+	border-radius: 0;
+	border: 1px solid #fff;
+}
+
+.form-control:focus {
+	border-color: #ed1c24;
+}
+
+.section-content {
+	position: relative;
+	z-index: 1;
+}
+
+.tr-breadcrumb {
+	background-image: url(../images/bg/breadcrumb-bg.jpg);
+	background-color: #cbd2ca;
+	color: #fff;
+	padding: 120px 0;
+}
+
+.breadcrumb-info {
+	max-width: 515px;
+	font-weight: 300;
+}
+
+.tr-page-title h1 {
+	font-size: 80px;
+	font-weight: 800;
+	margin: 0 0 5px
+}
+
+.tr-page-content {
+	padding: 100px 0;
+}
+
+.tr-parallax {
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+/*Topbar No Menu*/
+header {
+  position: relative;
+  width: 100%;
+  height: 102px;
+  background-color: #da291c;
+  box-shadow: 1px 1px 12px rgba(0,0,0,.35);
+}
+
+.logo-box {
+  position: absolute;
+  width: 94.88px;
+  height: 114px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 1px 1px 12px rgba(0,0,0,.35);
+  margin-left: 15px;
+  z-index: 1001;
+}
+
+.logo-box img {
+    padding: 8px 16px 10px;
+    width: auto;
+    height: 110px;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+/* Tr Team */
+
+.team-member {
+	margin: 0 15px;
+	text-align: left;
+	color: #000;
+}
+
+.team-member .overlay-rgba-red {
+	top: 100%;
+	text-align: center;
+}
+
+.team-member:hover .overlay-rgba-red {
+	top: 0;
+}
+
+.team-image {
+	position: relative;
+	overflow: hidden;
+}
+
+.team-image img {
+	width: 100%;
+}
+
+.team-member li a {
+	color: #fff;
+}
+
+.team-member h2 {
+	font-size: 18px;
+  font-weight: 700;
+	margin:10px 0 0;
+}
+
+.team-member span {
+	font-weight: 300;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.team-slider .slick-prev,
+.team-slider .slick-next {
+	margin-top: -30px;
+}
+
+.team-slider .slick-prev,
+.team-slider .slick-next,
+.blog-slider .slick-prev,
+.blog-slider .slick-next {
+	background-color: #f7f7f7;
+	width: 50px;
+	height: 50px;
+}
+
+.team-slider .slick-prev,
+.blog-slider .slick-prev {
+	margin-left: -48px;
+}
+
+.team-slider .slick-next,
+.blog-slider .slick-next {
+	margin-right: -48px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	font-family:"FontAwesome";
+	font-size: 24px;
+	color: #d9232d;
+	font-weight: 900;
+	opacity: 1;
+	display: block;
+}
+
+.slick-prev:before {
+	content: "\f053";
+}
+
+.slick-next:before {
+	content:"\f054";
+}
+
+.team-slider .slick-prev:hover, 
+.team-slider .slick-prev:focus, 
+.team-slider .slick-next:hover, 
+.team-slider .slick-next:focus,
+.blog-slider .slick-prev:hover, 
+.blog-slider .slick-prev:focus, 
+.blog-slider .slick-next:hover, 
+.blog-slider .slick-next:focus {
+	background-color: #d9232d;
+}
+
+.team-slider .slick-prev:hover:before,
+.team-slider .slick-next:hover:before,
+.team-slider .slick-prev:focus:before,
+.team-slider .slick-next:focus:before,
+.blog-slider .slick-prev:hover:before,
+.blog-slider .slick-next:hover:before,
+.blog-slider .slick-prev:focus:before,
+.blog-slider .slick-next:focus:before {
+	color: #fff;
+}
+
+
+
+.tr-form {
+	position: relative;
+} 
+
+
+.tr-form:hover button.icon {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);	
+}
+
+/* Tr contact Section */
+
+#gmap {
+	height: 565px;
+	background-color: #efece0;
+}
+
+.contact-content {
+	color: #989898;
+	font-weight: 300;
+	padding:65px 0;
+	overflow: hidden;
+}
+
+.contact-content a {
+	color: #989898;
+}
+
+.contact-content a:hover {
+	color: #ed1c24;
+}
+
+.contact-content span {
+	font-size: 18px;
+	color: #323c47;
+	font-weight: 700;
+	display: block;
+	margin: 5px 10px;
+}
+
+
+/* Tr Feedback */
+
+.tr-feedback .form-control {
+	border-color: #e9eff4;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+
+.tr-feedback .form-control:focus {
+	border-color: #ed1c24;
+}
+
+textarea.form-control {
+	resize: none;
+	height: 135px;
+	padding: 30px;
+}
+
+.tr-feedback .btn-primary {
+	margin-top: 20px;
+}
+
+
+.tr-before {
+	position: relative;
+	overflow: visible;
+}
+
+.tr-before:before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -29px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 9px solid transparent;
+    z-index: 1;
+}
+
+/* Tr Pagination */
+
+.pagination {
+	margin: 50px 0 0;
+}
+
+.pagination>li {
+	margin-right:1px;
+}
+
+.pagination>li>a, 
+.pagination>li>span {
+	border: none;
+	font-size: 24px;
+	color: #ed1c24;
+	font-weight: 300;
+	margin:1px;
+	padding: 8px 18px;
+	background-color: #fff;
+}
+
+.pagination>li:first-child>a, 
+.pagination>li:first-child>span,
+.pagination>li:last-child>a, 
+.pagination>li:last-child>span {
+	border-radius: 0;
+	background-color: #fff;
+}
+
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover,
+.pagination>li>a:focus, 
+.pagination>li>a:hover, 
+.pagination>li>span:focus, 
+.pagination>li>span:hover {
+	color: #fff;
+	background-color: #ed1c24;
+}
+
+/* tr-footer */
+.tr-middle {
+    position: relative;
+    height: 118px;
+    padding: 20px
+}
+
+.tr-footer {
+	font-size: 14px;
+	padding: 35px 0;
+}
+
+.tr-footer a {
+	color: #fff;
+	font-weight: 700;
+}
+
+.tr-footer img {
+    position: relative
+    max-width: 100%;
+    width: 140px;
+    margin: 0 auto;
+    left: 100%;
+}
+
+.tr-footer .footer-links {
+    font-weight: normal;
+    display: inline-block;
+    margin: 0;
+    padding: 20px;
+}
+
+.tr-footer .footer-links ul {
+    list-style: none;
+    text-align: left;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.tr-footer .footer-links ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+/* ==========================================================================
+ 	Extra Css
+ ========================================================================== */
+
+a, .search-icon, .tr-dropdown-menu,
+.hover-bg-color-red, .color-red,
+.service, .portfolio-menu li,
+.overlay-rgba-red, .slick-prev,
+.slick-next, .slick-prev:before,
+.slick-next:before, .question-number span,
+.tr-clients img, .portfolio-item .icon,
+.slick-dots li, .faq-contact i, .price-info li,
+.price-info>li:before, .price-info>li:after,
+.price-info .category, .price-info>li ul li:after,
+.price-info .pric, .slide-control,
+.btn-primary, .tr-search input, .btn-primary:before,
+.widget_search input[type=search],
+.entry-thumbnail img, .twitte {
+	-webkit-transition: all 500ms;
+	-moz-transition: all 500ms;
+	-ms-transition: all 500ms;
+	-o-transition: all 500ms;
+	transition: all 500ms;
+}
